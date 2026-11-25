@@ -1,0 +1,17 @@
+{
+  "researcher": {
+    "provider": "your-provider",
+    "model": "your-research-model",
+    "parameter_id": "research-checkpoint-id"
+  },
+  "verifier": {
+    "provider": "your-provider",
+    "model": "your-verification-model",
+    "parameter_id": "different-verification-checkpoint-id"
+  },
+  "auditor": {
+    "provider": "your-provider",
+    "model": "your-auditor-model",
+    "parameter_id": "auditor-checkpoint-id"
+  }
+}

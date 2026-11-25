@@ -1,0 +1,106 @@
+{
+  "schema_version": 2,
+  "example_type": "synthetic_protocol_example",
+  "window_id": "toy-window-current",
+  "termination_requested": true,
+  "candidates": [
+    {
+      "id": "c1",
+      "description": "Direct recurrence",
+      "method_family": "recurrence"
+    },
+    {
+      "id": "c2",
+      "description": "Symbolic identity",
+      "method_family": "symbolic"
+    },
+    {
+      "id": "c3",
+      "description": "Geometric representation",
+      "method_family": "geometric"
+    }
+  ],
+  "previous_steps": [
+    {
+      "id": "p1",
+      "candidate_id": "c1",
+      "method_family": "recurrence",
+      "new_evidence_ids": [
+        "e0"
+      ]
+    },
+    {
+      "id": "p2",
+      "candidate_id": "c2",
+      "method_family": "symbolic",
+      "new_evidence_ids": []
+    },
+    {
+      "id": "p3",
+      "candidate_id": "c3",
+      "method_family": "geometric",
+      "new_evidence_ids": []
+    }
+  ],
+  "steps": [
+    {
+      "id": "s1",
+      "candidate_id": "c1",
+      "method_family": "recurrence",
+      "new_evidence_ids": []
+    },
+    {
+      "id": "s2",
+      "candidate_id": "c1",
+      "method_family": "recurrence",
+      "new_evidence_ids": []
+    },
+    {
+      "id": "s3",
+      "candidate_id": "c1",
+      "method_family": "recurrence",
+      "new_evidence_ids": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "a1",
+      "candidate_id": "c2",
+      "feasible": true,
+      "status": "ready",
+      "basis": "The in-scope symbolic identity can be checked with the available algebra tools.",
+      "source_ids": [
+        "toy:brief"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e0",
+      "basis": "A reference calculation establishes the toy starting conditions.",
+      "source_ids": [
+        "toy:reference"
+      ]
+    }
+  ],
+  "baseline_evidence_ids": [
+    "e0"
+  ],
+  "focus": {
+    "reason": "",
+    "supporting_evidence_ids": []
+  },
+  "assessments": [
+    {
+      "id": "assessment-1",
+      "source_ids": [
+        "s3"
+      ],
+      "goal_narrowed": true,
+      "supporting_evidence_ids": [],
+      "limitation_identified": true,
+      "feasible_followup": true,
+      "followup_action_id": null
+    }
+  ]
+}

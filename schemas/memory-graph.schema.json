@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/liuxian201812/Torchbearer/schemas/memory-graph.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "nodes",
+    "edges"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "type",
+          "data"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "claim",
+              "claim_revision",
+              "evidence",
+              "verification",
+              "topic",
+              "human_review"
+            ]
+          },
+          "data": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "relation",
+          "target"
+        ],
+        "properties": {
+          "source": {
+            "type": "string"
+          },
+          "relation": {
+            "enum": [
+              "revision_of",
+              "supersedes",
+              "in_topic",
+              "supported_by",
+              "depends_on",
+              "unversioned_dependency",
+              "verified_by",
+              "original_argument",
+              "independent_account",
+              "reviewed_by"
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "truncated": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

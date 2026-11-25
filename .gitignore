@@ -1,0 +1,33 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.torchbearer/
+*.sqlite*
+.env
+.env.*
+credentials/
+private/
+dist/
+build/
+
+# Local research state and sensitive deployment materials
+*.db
+*.db-wal
+*.db-shm
+*.pem
+*.key
+*.log
+*.jsonl
+.DS_Store
+.idea/
+.vscode/
+secrets/
+logs/
+local/
+runs/
+
+# Local agent configuration and generated Claude Code skill copies
+.codex/config.toml
+.mcp.json
+.claude/skills/

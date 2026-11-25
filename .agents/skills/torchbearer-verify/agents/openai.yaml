@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify an important claim"
+  short_description: "Derive independently, then compare arguments"
+  default_prompt: "Use $torchbearer-verify to carry out the assigned Torchbearer task."

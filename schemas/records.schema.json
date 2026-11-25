@@ -1,0 +1,309 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/liuxian201812/Torchbearer/schemas/records.schema.json",
+  "$defs": {
+    "agent": {
+      "type": "object",
+      "required": [
+        "id",
+        "role",
+        "model"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "researcher",
+            "verifier",
+            "auditor"
+          ]
+        },
+        "model": {
+          "type": "object",
+          "required": [
+            "provider",
+            "model",
+            "parameter_id"
+          ],
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            "model": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            "parameter_id": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "revision",
+        "statement",
+        "assumptions",
+        "outcome",
+        "evidence_ids",
+        "topic_ids",
+        "depends_on",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "outcome": {
+          "enum": [
+            "supported",
+            "conditional",
+            "counterexample",
+            "failed_attempt",
+            "unresolved",
+            "corrected"
+          ]
+        },
+        "evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "topic_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "object",
+                "required": [
+                  "id",
+                  "revision"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "revision": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            ]
+          },
+          "uniqueItems": true
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "agent",
+            "human"
+          ],
+          "properties": {
+            "agent": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "human": {
+              "type": "null"
+            }
+          },
+          "additionalProperties": false
+        },
+        "failure_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolved_dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "revision"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "revision": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "outcome": {
+                "const": "failed_attempt"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "failure_reason"
+            ]
+          }
+        }
+      ]
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "id",
+        "agent_id",
+        "kind",
+        "goal"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "case_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "context": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "human_review_input": {
+      "type": "object",
+      "required": [
+        "id",
+        "claim_id",
+        "claim_sha256",
+        "correctness_assessment",
+        "physical_interpretation",
+        "revision",
+        "decision",
+        "release_authorized"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "claim_sha256": {
+          "type": "string",
+          "minLength": 1
+        },
+        "correctness_assessment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "physical_interpretation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "decision": {
+          "enum": [
+            "approve",
+            "revise",
+            "reject"
+          ]
+        },
+        "release_authorized": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

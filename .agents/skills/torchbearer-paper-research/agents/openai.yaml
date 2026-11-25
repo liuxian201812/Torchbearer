@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retrieve research evidence"
+  short_description: "Find and trace authorized scientific sources"
+  default_prompt: "Use $torchbearer-paper-research to carry out the assigned Torchbearer task."

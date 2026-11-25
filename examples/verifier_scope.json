@@ -1,0 +1,6 @@
+{
+  "allowed_record_ids": [
+    "toy:brief",
+    "toy:reference"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review research direction"
+  short_description: "Assess progress, alternatives and next actions"
+  default_prompt: "Use $torchbearer-audit to carry out the assigned Torchbearer task."

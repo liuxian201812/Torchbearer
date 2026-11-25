@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1160" viewBox="0 0 1440 1160" role="img" aria-labelledby="title desc" font-family="Arial, Helvetica, sans-serif">
+  <title id="title">Torchbearer: a continuous scientific research cycle</title>
+  <desc id="desc">A coordinator exchanges resources and findings with a researcher throughout investigation. Selected important questions enter independent derivation, frozen reporting and comparison by the same verifier. Corrections return to research. Scientific memory supports reuse, and human assessment precedes release.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#647c94"/></marker>
+    <marker id="teal-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#167d72"/></marker>
+    <marker id="gold-arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10 Z" fill="#a46d1f"/></marker>
+    <style>
+      .title {font-size:34px;font-weight:700;fill:#172b43}
+      .subtitle {font-size:20px;fill:#52667c}
+      .heading {font-size:24px;font-weight:700;fill:#172b43}
+      .body {font-size:18px;fill:#52667c}
+      .label {font-size:17px;fill:#52667c}
+      .flow {fill:none;stroke:#647c94;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow)}
+      .check-flow {fill:none;stroke:#167d72;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#teal-arrow)}
+      .memory-flow {fill:none;stroke:#a46d1f;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#gold-arrow)}
+    </style>
+  </defs>
+  <rect width="1440" height="1160" fill="#fff"/>
+  <text x="40" y="49" class="title">Torchbearer / The scientific research cycle</text>
+  <text x="40" y="83" class="subtitle">Continuous investigation · Selected independent checks · Reusable scientific memory</text>
+
+  <!-- The research loop remains the central, continuous activity. -->
+  <rect x="40" y="230" width="1360" height="250" rx="20" fill="#f5f8fc" stroke="#d8e2ec" stroke-width="1.6"/>
+  <text x="720" y="261" text-anchor="middle" font-size="19" font-weight="700" fill="#376ca5">CONTINUOUS SCIENTIFIC RESEARCH</text>
+  <rect x="90" y="115" width="350" height="86" rx="13" fill="#f1eafa" stroke="#74569e" stroke-width="1.7"/>
+  <text x="265" y="149" text-anchor="middle" class="heading">Human direction</text>
+  <text x="265" y="179" text-anchor="middle" class="body">Scope · ideas · scientific guidance</text>
+  <rect x="1050" y="115" width="330" height="86" rx="13" fill="#edf4ff" stroke="#376ca5" stroke-width="1.7"/>
+  <text x="1215" y="149" text-anchor="middle" class="heading">Direction auditor</text>
+  <text x="1215" y="179" text-anchor="middle" font-size="17" fill="#52667c">Progress · feasibility · exploration</text>
+  <path d="M210 201 V290" class="flow"/>
+  <text x="226" y="251" class="label">Goals &amp; constraints</text>
+  <path d="M1050 158 H800 V215 H420 V290" class="flow"/>
+  <text x="920" y="145" text-anchor="middle" class="label">Scientific feedback</text>
+  <path d="M1250 290 V201" class="flow"/>
+  <text x="1265" y="251" font-size="16" fill="#52667c">Research trace</text>
+
+  <rect x="90" y="290" width="350" height="125" rx="13" fill="#edf4ff" stroke="#376ca5" stroke-width="1.8"/>
+  <text x="265" y="326" text-anchor="middle" class="heading">Coordinator</text>
+  <text x="265" y="357" text-anchor="middle" class="body">Supervises all three agent roles</text>
+  <text x="265" y="386" text-anchor="middle" class="body">Materials &amp; task coordination</text>
+  <rect x="990" y="290" width="350" height="125" rx="13" fill="#edf4ff" stroke="#376ca5" stroke-width="2.3"/>
+  <text x="1165" y="326" text-anchor="middle" class="heading">Researcher</text>
+  <text x="1165" y="357" text-anchor="middle" class="body">Questions · models · methods</text>
+  <text x="1165" y="386" text-anchor="middle" font-size="17" fill="#52667c">Derive · compute · plan next steps</text>
+  <path d="M440 329 H990" class="flow"/>
+  <text x="715" y="313" text-anchor="middle" font-size="18" fill="#376ca5">Materials · literature · computation results</text>
+  <path d="M990 389 H440" class="flow"/>
+  <text x="715" y="419" text-anchor="middle" font-size="18" fill="#376ca5">Requests · intermediate results · next actions</text>
+
+  <!-- Source acquisition and scientific computation feed the coordinator. -->
+  <path d="M170 415 V550" class="flow"/>
+  <text x="185" y="511" class="label">Requests</text>
+  <path d="M370 550 V415" class="flow"/>
+  <text x="356" y="535" text-anchor="end" class="label">Results &amp; provenance</text>
+  <rect x="90" y="550" width="350" height="250" rx="16" fill="#edf4ff" stroke="#bccbdb" stroke-width="1.6"/>
+  <text x="115" y="589" class="heading">Sources &amp; tools</text>
+  <text x="115" y="629" class="body">Literature &amp; contribution cards</text>
+  <text x="115" y="662" class="body">Scientific data &amp; computation</text>
+  <text x="115" y="695" class="body">Evidence &amp; reusable artifacts</text>
+  <rect x="112" y="726" width="306" height="49" rx="8" fill="#fff" stroke="#bccbdb"/>
+  <text x="265" y="756" text-anchor="middle" font-size="17" fill="#376ca5">Provenance &amp; approved access</text>
+
+  <!-- Independent checks are selected branches of research, not a parallel lane. -->
+  <text x="790" y="537" text-anchor="middle" font-size="17" fill="#167d72">Mature claims · important questions</text>
+  <rect x="560" y="550" width="820" height="250" rx="16" fill="#f1faf7" stroke="#a7d0c5" stroke-width="1.8"/>
+  <text x="585" y="582" font-size="20" font-weight="700" fill="#167d72">SELECTED INDEPENDENT CHECK</text>
+  <text x="585" y="608" font-size="17" fill="#52667c">Different model weights · Scoped access · Staged disclosure</text>
+  <path d="M1080 415 V515 H535 V691 H585" class="check-flow"/>
+  <rect x="585" y="635" width="225" height="121" rx="11" fill="#fff" stroke="#167d72" stroke-width="1.5"/>
+  <text x="697.5" y="661" text-anchor="middle" font-size="21" font-weight="700" fill="#172b43">Independent</text>
+  <text x="697.5" y="686" text-anchor="middle" font-size="21" font-weight="700" fill="#172b43">derivation</text>
+  <text x="697.5" y="716" text-anchor="middle" font-size="16" fill="#52667c">Fresh, scoped context</text>
+  <text x="697.5" y="739" text-anchor="middle" font-size="15" fill="#52667c">Scientific brief &amp; initial evidence</text>
+  <path d="M810 692 H850" class="check-flow"/>
+  <rect x="850" y="635" width="180" height="121" rx="11" fill="#e6f5f0" stroke="#167d72" stroke-width="1.5"/>
+  <text x="940" y="666" text-anchor="middle" font-size="21" font-weight="700" fill="#172b43">Freeze account</text>
+  <text x="940" y="700" text-anchor="middle" font-size="17" fill="#52667c">Save &amp; hash</text>
+  <text x="940" y="727" text-anchor="middle" font-size="16" fill="#52667c">before disclosure</text>
+  <path d="M1030 692 H1070" class="check-flow"/>
+  <rect x="1070" y="635" width="285" height="121" rx="11" fill="#e6f5f0" stroke="#167d72" stroke-width="1.5"/>
+  <text x="1212.5" y="666" text-anchor="middle" font-size="21" font-weight="700" fill="#172b43">Reveal &amp; compare</text>
+  <text x="1212.5" y="700" text-anchor="middle" font-size="17" fill="#52667c">Same verifier context</text>
+  <text x="1212.5" y="727" text-anchor="middle" font-size="16" fill="#52667c">Original argument + frozen account</text>
+  <path d="M1355 692 H1410 V495 H1320 V415" class="check-flow"/>
+  <text x="1200" y="463" text-anchor="middle" font-size="16" fill="#167d72">Corrections · new questions</text>
+
+  <!-- Working records and checked records both accumulate in memory. -->
+  <path d="M1000 415 V495 H475 V910 H560" class="flow" stroke-width="1.8" stroke-dasharray="5 5"/>
+  <text x="487" y="828" font-size="16" fill="#52667c">Working records</text>
+  <path d="M1212.5 756 V850" class="check-flow"/>
+  <text x="1230" y="829" font-size="16" fill="#167d72">Checked records</text>
+  <rect x="560" y="850" width="820" height="145" rx="16" fill="#fff2d8" stroke="#d4aa65" stroke-width="1.8"/>
+  <text x="585" y="888" class="heading">Scientific Memory Graph</text>
+  <text x="585" y="924" font-size="20" fill="#52667c">Claims · revisions · evidence · dependencies</text>
+  <text x="585" y="957" font-size="18" fill="#52667c">Failed approaches · topic portals · cross-project reuse</text>
+  <g fill="none" stroke="#c69e63" stroke-width="2">
+    <path d="M1225 884 L1305 878 L1345 922 L1290 967 L1210 944 Z M1225 884 L1290 967 M1305 878 L1210 944 M1210 944 L1345 922"/>
+    <circle cx="1225" cy="884" r="7" fill="#fff"/><circle cx="1305" cy="878" r="8" fill="#fff"/>
+    <circle cx="1345" cy="922" r="8" fill="#fff"/><circle cx="1290" cy="967" r="8" fill="#fff"/>
+    <circle cx="1210" cy="944" r="8" fill="#fff"/><circle cx="1267" cy="915" r="11" fill="#a46d1f"/>
+  </g>
+  <path d="M560 970 H55 V366 H90" class="memory-flow"/>
+  <text x="295" y="958" text-anchor="middle" font-size="17" fill="#a46d1f">Reuse evidence · revisit dependencies</text>
+
+  <!-- Scientific release follows assessment of exact claim revisions. -->
+  <path d="M780 995 V1030" class="flow"/>
+  <rect x="560" y="1030" width="440" height="90" rx="13" fill="#f1eafa" stroke="#74569e" stroke-width="1.7"/>
+  <text x="780" y="1065" text-anchor="middle" font-size="23" font-weight="700" fill="#172b43">Human scientific assessment</text>
+  <text x="780" y="1096" text-anchor="middle" font-size="17" fill="#52667c">Correctness · interpretation · disclosure</text>
+  <path d="M1000 1075 H1060" class="flow"/>
+  <rect x="1060" y="1030" width="320" height="90" rx="13" fill="#f1eafa" stroke="#74569e" stroke-width="1.7"/>
+  <text x="1220" y="1065" text-anchor="middle" font-size="23" font-weight="700" fill="#172b43">Scientific release</text>
+  <text x="1220" y="1096" text-anchor="middle" font-size="17" fill="#52667c">Approved claim revisions</text>
+  <text x="90" y="1064" font-size="17" font-weight="700" fill="#376ca5">RESEARCH SKILLS</text>
+  <text x="90" y="1091" font-size="17" font-weight="700" fill="#376ca5">SCOPED MCP · PERSISTENT EXECUTION</text>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coordinate research teams"
+  short_description: "Route tasks, materials and scientific context"
+  default_prompt: "Use $torchbearer-coordinate to carry out the assigned Torchbearer task."

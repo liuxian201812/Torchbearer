@@ -1,0 +1,48 @@
+name: Isolated end-to-end validation
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  installed-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build from the checkout
+        run: |
+          python -m venv "$RUNNER_TEMP/build-env"
+          "$RUNNER_TEMP/build-env/bin/python" -m pip install build
+          "$RUNNER_TEMP/build-env/bin/python" -m build --wheel --outdir "$RUNNER_TEMP/wheels"
+      - name: Run core-only tests from the repository root
+        run: |
+          python -m venv "$RUNNER_TEMP/core-env"
+          "$RUNNER_TEMP/core-env/bin/python" -m pip install --no-deps "$RUNNER_TEMP"/wheels/*.whl
+          unset PYTHONPATH
+          "$RUNNER_TEMP/core-env/bin/python" -m unittest discover -s tests -v
+      - name: Install into a new environment outside the source tree
+        run: |
+          python -m venv "$RUNNER_TEMP/check-env"
+          "$RUNNER_TEMP/check-env/bin/python" -m pip install "$RUNNER_TEMP"/wheels/*.whl
+          "$RUNNER_TEMP/check-env/bin/python" -m pip install 'mcp>=1.12,<2' PyYAML
+          mkdir -p "$RUNNER_TEMP/check-data"
+          cp -R tests examples .agents mcp "$RUNNER_TEMP/check-data/"
+          cd "$RUNNER_TEMP/check-data"
+          "$RUNNER_TEMP/check-env/bin/python" -I -c 'import torchbearer, pathlib, sys; p=pathlib.Path(torchbearer.__file__).resolve(); assert p.is_relative_to(pathlib.Path(sys.prefix)); print(p)'
+      - name: Run installed-package tests, including real MCP stdio
+        working-directory: ${{ runner.temp }}/check-data
+        run: |
+          unset PYTHONPATH
+          "$RUNNER_TEMP/check-env/bin/python" -I -m unittest discover -s tests -v
+      - name: Exercise installed CLI, restart, graph, external worker and MCP
+        working-directory: ${{ runner.temp }}/check-data
+        run: |
+          unset PYTHONPATH
+          "$RUNNER_TEMP/check-env/bin/python" -I tests/e2e_installed.py

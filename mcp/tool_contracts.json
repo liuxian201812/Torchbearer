@@ -1,0 +1,43 @@
+{
+  "server": "Torchbearer Scientific Memory",
+  "mode": "read-only",
+  "scope_owner": "host coordinator",
+  "tools": [
+    {
+      "name": "search_records",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 50,
+            "default": 10
+          }
+        }
+      },
+      "returns": "Allowed record identities, titles and kinds"
+    },
+    {
+      "name": "read_record",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "record_id"
+        ],
+        "properties": {
+          "record_id": {
+            "type": "string"
+          }
+        }
+      },
+      "returns": "One allowed record with scientific content and provenance"
+    }
+  ]
+}

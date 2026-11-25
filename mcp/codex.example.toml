@@ -1,0 +1,4 @@
+# Example only. Replace every absolute-path placeholder before use.
+[mcp_servers.torchbearer]
+command = "/absolute/path/to/Torchbearer/.venv/bin/python"
+args = ["-m","torchbearer.mcp_server","--corpus","/absolute/path/to/Torchbearer/examples/corpus.json","--scope","/absolute/path/to/Torchbearer/examples/verifier_scope.json"]

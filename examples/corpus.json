@@ -1,0 +1,40 @@
+{
+  "example_type": "synthetic_protocol_example",
+  "records": [
+    {
+      "id": "toy:brief",
+      "kind": "scientific_brief",
+      "title": "Toy sequence task",
+      "text": "Derive the sum of the first n positive odd integers, for nonnegative integer n."
+    },
+    {
+      "id": "toy:reference",
+      "kind": "source_card",
+      "title": "Arithmetic progression identity",
+      "text": "A finite arithmetic progression has sum equal to its number of terms multiplied by the mean of its endpoints.",
+      "provenance": {
+        "type": "synthetic_source_card",
+        "version": "1"
+      },
+      "contribution_analysis": {
+        "source_and_evidence": {
+          "identity": "synthetic:arithmetic-progression",
+          "version": "1",
+          "reading_scope": "Complete synthetic source statement",
+          "evidence_locations": [
+            "toy:reference.text"
+          ]
+        },
+        "problem_and_context": "Evaluate a finite arithmetic progression under the usual integer arithmetic assumptions.",
+        "contribution_and_value": "The known endpoint-average identity gives the sum from the number of terms and the two endpoints.",
+        "relation_to_project": "The toy odd-integer task applies this known identity. Its role is to demonstrate evidence attribution and protocol execution, with no original scientific contribution claimed."
+      }
+    },
+    {
+      "id": "toy:original",
+      "kind": "originating_argument",
+      "title": "Original toy argument",
+      "text": "For n odd integers the endpoints average to n, giving n squared."
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Conduct scientific research"
+  short_description: "Develop and retain evidence-backed research"
+  default_prompt: "Use $torchbearer-research to carry out the assigned Torchbearer task."
