@@ -63,11 +63,11 @@ The [command backend](docs/command-backend.md) accepts existing agent workers th
 
 ## Research highlights
 
+The results below are drawn from theoretical physics, the field for which Torchbearer’s current research workflows are primarily tailored. We envision the underlying framework as a general approach to theoretical research across scientific disciplines.
+
 <p align="center">
   <img src="assets/research-highlights.svg" alt="Nineteen theoretical research contributions across condensed matter, atomic molecular and optical physics, quantum information, particle physics, gravitation and cosmology" width="100%">
 </p>
-
-Selected theoretical results, grouped by scientific question.
 
 ## Scientific memory
 
